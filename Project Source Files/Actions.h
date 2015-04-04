@@ -36,6 +36,6 @@ void Jump (supermario &man, const holes &hole) {
 		cout<<"\tYOU LOSE! falling in a black hole\n";
 		man.status = 0; //dead
 	}else {
-		cout<<"\toof we where close, Supermario jumped over the hole\n";
+		cout<<"\toof that was close, Supermario jumped over the hole\n";
 	}
 }
