@@ -12,7 +12,7 @@ void Run (supermario &man)
 }
 // to kill the enemy (affect the power of the enemy, and the points of the supermario )
 // to kill supermario (affect the health of the supermario)
-void fire (supermario &man,Enemy &Enemy1,holes &h)
+void fire (supermario &man,Enemy &Enemy1)
 {  
 	
 	// statues of supermario ==3 supermario is fire on the enemy
