@@ -3,12 +3,14 @@
 #include <cmath>
 using namespace std;
 
+
 void Run (supermario &man)
 {cout << "Run fn is called for the supermario at ( " << man.pos.x << " , " << man.pos.y << " )\n";
 
 	// constraints not handled
 	man.pos.x += 1;
 	man.pos.y += 1;
+
 }
 
 void Jump (supermario &man, const holes &hole) {
@@ -38,4 +40,19 @@ void Jump (supermario &man, const holes &hole) {
 	}else {
 		cout<<"\toof that was close, Supermario jumped over the hole\n";
 	}
+}
+
+// Feature GetBonus when eating a mushroom :)
+
+void GetBonus(supermario &man, int numMushroom)
+{
+	// The number of points of eating mushrooms ... Assume that each mushroom 100 points
+	int MushroomPoints = 100;
+	if (numMushroom > 0)
+		cout << "Wow Wow Wow >>> You've great job" << endl;
+	// score of points
+	man.points = man.points + (MushroomPoints * numMushroom);
+	// Show score of points 
+	cout << "Congratulations :)   score of points : " << man.points << endl;
+
 }
