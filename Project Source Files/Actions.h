@@ -49,7 +49,7 @@ void GetBonus(supermario &man, int numMushroom)
 	// The number of points of eating mushrooms ... Assume that each mushroom 100 points
 	int MushroomPoints = 100;
 	if (numMushroom > 0)
-		cout << "Wow Wow Wow >>> You've great job" << endl;
+		cout << "Wow Wow Wow >>> You did a great job" << endl;
 	// score of points
 	man.points = man.points + (MushroomPoints * numMushroom);
 	// Show score of points 
