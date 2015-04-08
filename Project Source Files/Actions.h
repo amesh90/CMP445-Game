@@ -36,3 +36,14 @@ void fire (supermario &man,Enemy &Enemy1,holes &h)
 	
 
 }
+void KillEnemy (supermario &man,Enemy &Enemy1,holes &h)
+{
+	// statues of supermario ==3 supermario is killed the enemy
+	if (man.status==3 ||((Enemy1.pos.x==h.pos.x)&&(Enemy1.pos.y==h.pos.y)))  
+	{
+		Enemy1.power=0;
+		Enemy1.status=0; //Enemy is dead
+	}
+	 cout << "Enemy Killed at ( " << Enemy1.pos.x << " , " << Enemy1.pos.y << " and his power is " << Enemy1.power << ")\n";
+
+}
