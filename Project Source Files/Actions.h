@@ -47,6 +47,32 @@ void KillEnemy (supermario &man,Enemy &Enemy1,holes &h)
 	 cout << "Enemy Killed at ( " << Enemy1.pos.x << " , " << Enemy1.pos.y << " and his power is " << Enemy1.power << ")\n";
 
 }
+void fightdragon (supermario &man,Dragon &dragon1 )
+{  
+	while(man.health!=0 && dragon1.status!=0)
+	{
+	if (dragon1.status==1)// dragon had hit  
+	{
+	man.points  +=10;//increse points of the supermario 10 point 
+    dragon1.power -=10; //decrese power of  dragon 10 
+	 man.health -=10;//decrese health of  supermario 10 
+	 cout << "dragon1 is hit at ( " << dragon1.pos.x << " , " << dragon1.pos.y << " )\n";
+	}
+	
+	if (dragon1.power <=0 ) 
+	{
+		 man.points  +=100;//increse points of the supermario 100 point 
+         man.health  +=10;  //increase power supermario 10 point
+		 man.level_ID +=1;
+		 dragon1.status=0; //supermario Kill dragon
+		 dragon1.power=0;
+		cout << "supermario Kill dragon1 at ( " << man.pos.x << " , " << man.pos.y << " )\n";
+		//call to next level
+		
+	}
+	
+	}
+}
 
 void CollectPoints (supermario &man, const Enemy &enemy) {
 	//Make sure enemy is dead
