@@ -9,33 +9,30 @@ void Run (supermario &man)
 	// constraints not handled
 	man.pos.x += 1;
 	man.pos.y += 1;
-}
 
-void Jump (supermario &man, const holes &hole) {
-	cout<<"Jump fn is called for supermario at ("<<man.pos.x<<","<<man.pos.y<<")\n";
-	cout<<"\tHole at "<<hole.pos.x<<","<<hole.pos.y<<"\n";
+}
+// to kill the enemy (affect the power of the enemy, and the points of the supermario )
+// to kill supermario (affect the health of the supermario)
+void fire (supermario &man,Enemy &Enemy1,holes &h)
+{  
 	
-	if(hole.pos.x+hole.width < man.pos.x) {
-		cout<<"\tDon't worry the hole is behind you\n";
-		return;
-	}
-	
-	//distance between supermario and the hole
-	int dist = abs(hole.pos.x - man.pos.x);
-	
-	//the first ground position after the hole
-	int safepointdist = man.pos.x + dist + hole.width;
-	
-	//Health value is the distance supermario can jump 
-	int landingpos = man.pos.x + man.health;
-	
-	man.pos.x = landingpos;
-	
-	if(landingpos < safepointdist)
+	// statues of supermario ==3 supermario is fire on the enemy
+	if (man.status==3)  
 	{
-		cout<<"\tYOU LOSE! falling in a black hole\n";
-		man.status = 0; //dead
-	}else {
-		cout<<"\toof that was close, Supermario jumped over the hole\n";
+	man.points  +=10; //decrese power of enemy 10 
+    Enemy1.power -=10;  //increse points of the supermario 10 point
+	if (Enemy1.power==0)
+	Enemy1.status=0; //Enemy dead 
+	 cout << "Enemy Kill at ( " << Enemy1.pos.x << " , " << Enemy1.pos.y << " )\n";
 	}
+	//// statues of enemy ==3 enemy is fire on the supermario
+	if (Enemy1.status ==3) 
+	{
+         man.health -=10;  //decrese power supermario 10 point
+		 if(man.health==0)
+		 man.status=0; //supermario dead
+		cout << "supermario Kill at ( " << man.pos.x << " , " << man.pos.y << " )\n";
+	}
+	
+
 }
