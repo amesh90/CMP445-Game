@@ -44,10 +44,15 @@ void CollectPoints (supermario &man, const Enemy &enemy) {
 	//Make sure enemy is dead
 	if (enemy.status==0)
 	{	//Must be standing at the points to collect them
-		if (enemy.pos==man.pos)
+		if (enemy.pos.x==man.pos.x)
 		{
-			man.points++;
-			cout<<man.points;
+			if(enemy.pos.y==man.pos.y)
+			{
+				man.points++;
+				cout<<man.points;
+			}
+			else
+			cout<<"\tJump to collect your rewards!\n";	
 		}
 		else
 			cout<<"\tMove to collect your rewards!\n";				
