@@ -47,3 +47,17 @@ void KillEnemy (supermario &man,Enemy &Enemy1,holes &h)
 	 cout << "Enemy Killed at ( " << Enemy1.pos.x << " , " << Enemy1.pos.y << " and his power is " << Enemy1.power << ")\n";
 
 }
+
+void CollectPoints (supermario &man, const Enemy &enemy) {
+	//Make sure enemy is dead
+	if (enemy.status==0)
+	{	//Must be standing at the points to collect them
+		if (enemy.pos==man.pos)
+		{
+			man.points++;
+			cout<<man.points;
+		}
+		else
+			cout<<"\tMove to collect your rewards!\n";				
+	}
+}
