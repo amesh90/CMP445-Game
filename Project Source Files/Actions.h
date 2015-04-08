@@ -11,7 +11,6 @@ void Run (supermario &man)
 	man.pos.x += 1;
 	man.pos.y += 1;
 
-
 }
 
 // to kill the enemy (affect the power of the enemy, and the points of the supermario )
