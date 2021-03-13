@@ -14,4 +14,3 @@ this game consists of some features as follows
 // Phase 2
 4. collect points 
    
-4. 
